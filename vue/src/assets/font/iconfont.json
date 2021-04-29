@@ -1,0 +1,30 @@
+{
+  "id": "2519935",
+  "name": "微信",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "15838530",
+      "name": "select",
+      "font_class": "select",
+      "unicode": "e67e",
+      "unicode_decimal": 59006
+    },
+    {
+      "icon_id": "122688",
+      "name": "back",
+      "font_class": "back",
+      "unicode": "e697",
+      "unicode_decimal": 59031
+    },
+    {
+      "icon_id": "841417",
+      "name": "message",
+      "font_class": "message",
+      "unicode": "e6f0",
+      "unicode_decimal": 59120
+    }
+  ]
+}

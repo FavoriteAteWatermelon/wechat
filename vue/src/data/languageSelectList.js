@@ -1,3 +1,4 @@
+
 const languageSelectList = [
   '跟随系统',
   '简体中文',
@@ -18,5 +19,4 @@ const languageSelectList = [
   'हिंदीName',
   'היברית'
 ]
-
 export default languageSelectList

@@ -5,14 +5,13 @@
   </div>
 </template>
 <script>
-/* eslint-disable */ 
 import BScroll from 'better-scroll'
 export default {
   props: {
     probeType: {
       type: Number,
       default () {
-        return 1
+        return 3
       }
     },
     click: {
@@ -25,16 +24,16 @@ export default {
     },
     listenScroll: {
       type: Boolean,
-      default: false
+      default: true
     }
   },
-  mounted() {
+  mounted () {
     this.$nextTick(() => {
       this._initScroll()
     })
   },
   methods: {
-    _initScroll() {
+    _initScroll () {
       if (!this.$refs.wrapper) {
         return
       }
@@ -44,28 +43,29 @@ export default {
       })
       if (this.listenScroll) {
         this.scroll.on('scroll', (pos) => {
+          // console.log(pos)
           this.$emit('scroll', pos)
         })
       }
     },
-    enable() {
+    enable () {
       this.scroll && this.scroll.enable()
     },
-    disable() {
+    disable () {
       this.scroll && this.scroll.disable()
     },
-    refresh() {
+    refresh () {
       this.scroll && this.scroll.refresh()
     },
-    scrollTo() {
+    scrollTo () {
       this.scroll && this.scroll.scrollTo.apply(this.scroll, arguments)
     },
-    scrollToElement() {
+    scrollToElement () {
       this.scroll && this.scroll.scrollToElement.apply(this.scroll, arguments)
     }
   },
   watch: {
-    data() {
+    data () {
       setTimeout(() => {
         // console.log(1)
         this.refresh()

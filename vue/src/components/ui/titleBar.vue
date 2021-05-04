@@ -1,7 +1,8 @@
 <template>
   <div class="title-bar" :style="{background: backgroundColor}" >
      {{title}}
-     <i @click="back" :class="['iconfont','custom-font',backBtn? 'icon-back':'']"></i>
+     <i @click="back" :class="['iconfont','custom-font',backBtn]"></i>
+     <i @click="search" v-if="rightIconBtn" :class="['iconfont','right-font',rightBtnIcon]"></i>
      <div @click="saveBack" v-if="rightBtn" class="save-btn">保存</div>
   </div>
 </template>
@@ -22,8 +23,16 @@ export default {
       default: ''
     },
     backBtn: {
+      type: String,
+      default: 'icon-back'
+    },
+    rightIconBtn: {
       type: Boolean,
-      default: true
+      default: false
+    },
+    rightBtnIcon: {
+      type: String,
+      default: 'icon-search'
     },
     rightBtn: {
       type: Boolean,
@@ -38,6 +47,9 @@ export default {
     back () {
       this.$router.back()
     },
+    search () {
+      this.$emit('search')
+    },
     saveBack () {
       this.$router.back()
     }
@@ -50,8 +62,9 @@ export default {
   position: relative;
   height: 50px;
   line-height: 50px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
+  color: #333;
   letter-spacing: 1px;
   text-align: center;
   .custom-font{
@@ -61,6 +74,16 @@ export default {
     height: 50px;
     text-align: left;
     padding-left: 10px;
+    line-height: 50px;
+    font-size: 20px;
+  }
+  .right-font{
+    position: absolute;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    text-align: right;
+    padding-right: 20px;
     line-height: 50px;
     font-size: 20px;
   }

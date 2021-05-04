@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import TitleBar from '../../components/titleBar'
+import TitleBar from '../../components/ui/titleBar'
 import BScroll from '../../components/base/scroll'
 import LanguageSelectList from '../../data/languageSelectList'
 export default {

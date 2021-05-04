@@ -17,7 +17,14 @@ export default new Router({
         {
           path: 'login',
           name: 'Login',
-          component: () => import('@/pages/login/login')
+          component: () => import('@/pages/login/login'),
+          children: [
+            {
+              path: 'code',
+              name: 'Cod',
+              component: () => import('@/pages/login/components/loginTelCode')
+            }
+          ]
         },
         {
           path: 'language',
@@ -30,6 +37,11 @@ export default new Router({
           component: () => import('@/pages/login/register')
         }
       ]
+    },
+    {
+      path: '/tabbar',
+      name: 'Tabbar',
+      component: () => import('@/pages/tabbar')
     }
   ]
 })

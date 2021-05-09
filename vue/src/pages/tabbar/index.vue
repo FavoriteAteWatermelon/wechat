@@ -1,5 +1,6 @@
 <template>
   <div class="tabtar">
+    <router-view></router-view>
     <ul class="bottom-nav">
       <li @click="changNav(index)" v-for="(item, index) in tabbarItems" :key="item.name">
         <img :src="activeIndex === index ?item.imgUrl :item.imgUrlDefault" alt />
@@ -25,6 +26,22 @@ export default {
   methods: {
     changNav (i) {
       this.activeIndex = i
+      switch (i) {
+        case 0:
+          this.$router.push('/tabbar/home')
+          break
+        case 1:
+          this.$router.push('/tabbar/contacts')
+          break
+        case 2:
+          this.$router.push('/tabbar/discover')
+          break
+        case 3:
+          this.$router.push('/tabbar/me')
+          break
+        default:
+          this.$router.push('/tabbar')
+      }
     }
   }
 }

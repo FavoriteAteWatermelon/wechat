@@ -63,10 +63,10 @@ export default {
   height: 50px;
   line-height: 50px;
   font-size: 16px;
-  font-weight: bold;
   color: #333;
   letter-spacing: 1px;
   text-align: center;
+  font-weight: bold;
   .custom-font{
     position: absolute;
     left: 0;

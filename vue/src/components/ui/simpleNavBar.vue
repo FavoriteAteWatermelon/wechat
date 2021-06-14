@@ -2,7 +2,7 @@
   <div class="title-bar" >
      {{title}}
      <i @click="back" :class="['iconfont','custom-font',backBtn]"></i>
-     <i @click="search" class="right-font">...</i>
+     <i @click="search" v-if="show" class="right-font">...</i>
   </div>
 </template>
 
@@ -20,6 +20,10 @@ export default {
     rightBtn: {
       type: Boolean,
       default: false
+    },
+    show: {
+      type: Boolean,
+      default: true
     }
   },
   data () {
@@ -39,7 +43,10 @@ export default {
 
 <style lang="scss" scoped>
 .title-bar{
-  position: relative;
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
   height: 50px;
   line-height: 50px;
   font-size: 16px;

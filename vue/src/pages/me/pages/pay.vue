@@ -95,13 +95,15 @@ export default {
   z-index: 100;
   background: #eee;
   .money-container {
+    margin-top: 60px;
     background: #fff;
   }
   .money {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin:0 10px 10px 10px ;
-    padding: 0 60px;
+    padding: 0 20px;
     height: 120px;
     font-size: 14px;
     border-radius: 5px;

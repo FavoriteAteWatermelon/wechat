@@ -7,7 +7,7 @@
          <li ref="listGroup" v-for="(item, index) in normalizeList" :key="index">
            <div class="title">{{item.title}}</div>
            <ul>
-             <li class="item" v-for="(area, i) in item.items" :key="i" >
+             <li @click="selectItem(area)" class="item" v-for="(area, i) in item.items" :key="i" >
                <span>{{area.cn}}</span> <span class="code">{{area.code}}</span>
                </li>
            </ul>
@@ -82,6 +82,10 @@ export default {
     this.initRenderedInfo()
   },
   methods: {
+    selectItem (area) {
+      this.$emit('selectCode', area)
+      this.$router.back()
+    },
     search () {
       console.log(this.scrollY)
     },

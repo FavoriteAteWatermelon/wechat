@@ -15,7 +15,8 @@
       <div class="otherWay" @click="switchLogin"><a href="#">手机号登录</a></div>
       <div class="next" >登录</div>
     </div>
-    <div class="helper"><span>找回密码</span><span class="line">|</span> <span>紧急冻结</span><span class="line">|</span><span>微信安全中心</span></div>
+    <div class="helper"><span>找回密码</span><span class="line">|</span> <span>紧急冻结</span><span class="line">|</span><span @click="showMoreSelect">更多</span></div>
+    <!-- <AactionSheet></AactionSheet> -->
     <transition name="slide">
       <router-view></router-view>
     </transition>
@@ -24,6 +25,7 @@
 
 <script>
 import TitleBar from '../../components/ui/titleBar'
+import AactionSheet from '../../components/ui/android/aactionSheet'
 export default {
   data () {
     return {
@@ -38,6 +40,8 @@ export default {
     }
   },
   methods: {
+    showMoreSelect () {
+    },
     switchLogin () {
       this.isTel = !this.isTel
     },
@@ -51,7 +55,8 @@ export default {
     }
   },
   components: {
-    TitleBar
+    TitleBar,
+    AactionSheet
   }
 }
 </script>
@@ -78,7 +83,6 @@ export default {
   .title {
     margin: 30px 0 0 10px;
     font-size: 24px;
-    // font-weight: bold;
   }
   .area {
     margin: 30px 5px 0 5px;

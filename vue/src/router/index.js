@@ -34,7 +34,14 @@ export default new Router({
         {
           path: 'register',
           name: 'Register',
-          component: () => import('@/pages/login/register')
+          component: () => import('@/pages/login/register'),
+          children: [
+            {
+              path: 'code',
+              name: 'Cod',
+              component: () => import('@/pages/login/components/loginTelCode')
+            }
+          ]
         }
       ]
     },

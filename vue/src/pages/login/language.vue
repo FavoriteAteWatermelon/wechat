@@ -31,6 +31,7 @@ export default {
     select (i) {
       this.selectIndex = i
     }
+
   },
   components: {
     TitleBar,
